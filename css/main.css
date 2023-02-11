@@ -1,52 +1,49 @@
-/* 	CSS Document */
+/* Mobile First */
 
-body {
-    font-family: 'Monserrat', Arial, Helvetica, sans-serif;
-    font-size: 18px;
-}
-
-h1, h2 {
-    font-family: 'lato', Arial, Helvetica, sans-serif;
-    font-size: 28px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 20px;
-}
-
-p {
-    margin-left: 20px;
-    margin-bottom: 20px;
-}
-
-#container {
-    max-width: 1200px;
-    margin: 0 auto;
-    border: solid 1px #333;
+.row {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
 }
 
-#box1 {
-    background-color: #8596a6;
-    width: 70%;
-    height: 300px;
+.column {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
-#box2 {
-    background-color: #b0c6d9;
-    width: 30%;
-    height: 300px;
+.column:nth-child(3), .column:nth-child(4) {
+    display: none;
 }
 
-/* at 400pc or smaller run this CSS*/
-@media screen and (max-width: 400px) {
-    #box1 {
-        width: 50%;
+.column:nth-child(1) {
+    background-color: pink;
+}
+
+.column:nth-child(2) {
+    background-color: red;
+}
+  
+/* 641px and above */
+@media (min-width: 641px) {
+    .column {
+      width: 25%;
+      display: flex;
     }
-
-    #box2 {
-        background-color: #5d6673;
-        color: #fff;
-        width: 50%;
+    .column:nth-child(3),
+    .column:nth-child(4) {
+      display: flex;
+    }
+    .column:nth-child(1) {
+      background-color: blue;
+    }
+    .column:nth-child(2) {
+      background-color: purple;
+    }
+    .column:nth-child(3) {
+      background-color: grey;
+    }
+    .column:nth-child(4) {
+      background-color: brown;
     }
 }
+  
